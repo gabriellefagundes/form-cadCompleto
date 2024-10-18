@@ -1,5 +1,7 @@
+// Evento de submit do formulário
 document.getElementById('cadastroForm').addEventListener('submit', function (event) {
-    event.preventDefault();
+    event.preventDefault(); // Impede o envio padrão do formulário
+
     if (validarCPF() && checarEmail()) {
         alert('Formulário enviado com sucesso!');
     }
@@ -7,17 +9,16 @@ document.getElementById('cadastroForm').addEventListener('submit', function (eve
 
 // Validação de Email 
 function checarEmail() {
-    const email = document.getElementById('email').value;
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    const emailInput = document.getElementById('email').value.trim();
 
-    if (!emailRegex.test(email)) {
-        alert('Por favor, insira um email válido.');
+    if (emailInput === "" || 
+        emailInput.indexOf('@') === -1 || 
+        emailInput.indexOf('.') === -1) {
+        alert("Por favor, informe um Email válido");
         return false;
     }
     return true;
 }
-
-
 
 // Validação de CPF
 function validarCPF() {
@@ -37,7 +38,7 @@ function validarCPF() {
 
     resto = (soma * 10) % 11;
     if (resto === 10 || resto === 11) resto = 0;
-    if (resto != parseInt(cpf.substring(9, 10))) {
+    if (resto !== parseInt(cpf.substring(9, 10))) {
         alert('CPF inválido.');
         return false;
     }
@@ -49,7 +50,7 @@ function validarCPF() {
 
     resto = (soma * 10) % 11;
     if (resto === 10 || resto === 11) resto = 0;
-    if (resto != parseInt(cpf.substring(10, 11))) {
+    if (resto !== parseInt(cpf.substring(10, 11))) {
         alert('CPF inválido.');
         return false;
     }
@@ -85,4 +86,9 @@ document.getElementById('cep').addEventListener('blur', function () {
         .catch(() => {
             alert('Erro ao buscar CEP.');
         });
+});
+
+// Validação de email quando o campo perde o foco
+document.getElementById('email').addEventListener('blur', function () {
+    checarEmail(); // Verifica o email quando o usuário sai do campo
 });
