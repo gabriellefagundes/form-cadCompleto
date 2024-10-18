@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="cadastro.css">
+    <title>Cadastro Completo</title>
+</head>
+
+<body>
+    <form id="cadastroForm">
+        <h1>Cadastro de Usuário</h1>
+
+        <div class="row">
+            <div class="col">
+                <label for="email" class="form-label">Email</label>
+                <input class="col-12" type="email" id="email" placeholder="Email" required>
+            </div>
+            <div class="col">
+                <label for="senha" class="form-label">Senha</label>
+                <input class="col-12" type="password" id="senha" placeholder="Senha" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="cpf" class="form-label">CPF</label>
+                <input class="col-12" type="text" id="cpf" placeholder="CPF" required>
+            </div>
+            <div class="col">
+                <label for="dataNascimento" class="form-label">Data de Nascimento</label>
+                <input class="col-12" type="date" id="dataNascimento" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="cep" class="form-label">CEP</label>
+                <input class="col-12" type="text" id="cep" placeholder="CEP" required>
+            </div>
+            <div class="col">
+                <label for="numero" class="form-label">Número</label>
+                <input class="col-12" type="text" id="numero" placeholder="Número" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="logradouro" class="form-label">Rua</label>
+                <input class="col-12" type="text" id="logradouro" placeholder="Rua" disabled>
+            </div>
+            <div class="col">
+                <label for="bairro" class="form-label">Bairro</label>
+                <input class="col-12" type="text" id="bairro" placeholder="Bairro" disabled>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="localidade" class="form-label">Cidade</label>
+                <input class="col-12" type="text" id="localidade" placeholder="Cidade" disabled>
+            </div>
+            <div class="col">
+                <label for="estado" class="form-label">Estado</label>
+                <input class="col-12" type="text" id="estado" placeholder="Estado" disabled>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col">
+                <label for="complemento" class="form-label">Complemento</label>
+                <input class="col-12" type="text" id="complemento" placeholder="Complemento" disabled>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-success">Confirmar</button>
+    </form>
+    <script src="cadastro.js"></script>
+</body>
+
+</html>
